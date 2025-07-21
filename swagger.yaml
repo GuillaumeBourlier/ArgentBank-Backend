@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         "500":
           description: Internal Server Error
-    put:
+    patch:
       security:
         - Bearer: []
       tags:
@@ -167,6 +167,11 @@ paths:
       summary: Update a transaction
       description: Update transaction metadata such as category or notes
       parameters:
+        - name: accountId
+          in: path
+          required: true
+          description: The ID of the account
+          type: string
         - name: transactionId
           in: path
           required: true
